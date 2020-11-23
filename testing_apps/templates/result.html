@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block header %}
+  <h3>Hi, your result is {{result}} from {{total}}. It's {{percent}}% correct answers!</h3>
+{% endblock header %}
+{% block content %}
+
+<ul><a href="{% url 'testing_apps:index' %}">Again</a></ul>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block header %}
+    <h3>
+    <p>{{question}}</p>
+    </h3>
+{% endblock header %}
+{% block content %}
+   <form method="POST" >
+        {% csrf_token %}
+        <h4>   
+        <p>Answers:</p><br>
+        </h4>
+        <ul>
+            {% for answer in answers %}
+                <h4>
+                <p><input type="checkbox" name="a" value={{answer.correct}}> {{ answer.text }}</p>
+                </h4>
+            {% empty %}
+                There are no answers for this question yet.
+            {% endfor %}
+        </ul><br>
+        <input type="submit" value="Next" />
+            {% if messages %}
+                <class="messages">
+                    {% for message in messages %}
+                        <class="{{ message.tags }}">
+                        <font color="red" size="2">{{ message|safe }}</font>
+                    {% endfor %}
+            {% endif %}
+        <br><br>
+   </form>
+{% endblock content %}
+

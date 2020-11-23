@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block header %}
+  <h3>
+  <p>Tests</p>
+  </h3>
+{% endblock header %}
+{% block content %}
+   <ul>
+   <h4>
+    {% for test in tests %}
+            <li><a href="{% url 'testing_apps:tests' test.id %}">{{ test }}</a></li>
+    {% empty %}
+            <li>No tests have been added yet.</li>
+    {% endfor %}
+   </h4>
+   </ul>
+{% endblock content %}
+

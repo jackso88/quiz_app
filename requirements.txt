@@ -1,0 +1,7 @@
+Django
+dj-database-url
+dj-static
+django-bootstrap3
+gunicorn
+static3
+psycopg2>=2.6.1
